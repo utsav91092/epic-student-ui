@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Epic Student Module</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<link rel="stylesheet" href="course.css">
+	<script type="text/javascript" src="../js/app.js"></script>
+</head>
+<body>
+	
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		<div class="collapse navbar-collapse">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item active">
+					<a class="nav-link" href="../index.html">Student</a>
+				</li>
+				<li class="nav-item active">
+					<a class="nav-link" href="course.html">Course</a>
+				</li>
+				<li class="nav-item active">
+					<a class="nav-link" href="../subscription/subscription.html">Subscription</a>
+				</li>
+				<li class="nav-item active">
+					<a class="nav-link" href="../report/report.html">Report</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+
+
+	<div id="Course" class="container">
+		
+		<button type="button" class="btn btn-outline-primary create-course-btn" onclick="showCreateCourseForm()">Create Course</button>
+
+		<form id="form-create-course" class="create-course">
+			<div class="form-group">
+				<label>Name</label>
+				<input class = "form-control" type="text" id="name" placeholder="">
+			</div>
+			<div class="form-group">
+				<label>Description</label>
+				<input  class = "form-control" type="text" id="course-description"  placeholder="">
+			</div>
+			<button type="button" class="btn btn-primary" onclick="return createCourse()">Submit</button>
+		</form>	
+
+		<table class="table table-bordered course-list-table">
+			<thead class="thead">
+				<tr class="font-weight-bold">
+					<th>Name</th>
+				</tr>
+			</thead>
+			<tbody id="course-table" class="course-list">
+
+			</tbody>
+		</table>
+	</div>
+	
+	<script type="text/javascript">
+			window.addEventListener("load", myInit, true); function myInit(){fetchCourses(true)};
+		</script>
+</body>
+</html>	
